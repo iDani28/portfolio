@@ -24,7 +24,7 @@ export default function Footer() {
         aria-hidden="true"
       />
 
-      <div className="w-full max-w-6xl mx-auto px-6 md:px-10 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div className="w-full max-w-6xl mx-auto px-6 sm:px-8 md:px-10 flex flex-col md:flex-row items-center justify-between gap-4">
         {/* Logo / firma */}
         <div className="flex items-center gap-2 font-mono text-[#8892b0] text-sm">
           <Terminal size={16} className="text-[#00f5ff]" />

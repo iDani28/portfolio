@@ -157,7 +157,7 @@ export default function SobreMi() {
             <InfoItem icon={Mail} label="Email" value="dmrdaniel2804@gmail.com" delay={0.45} />
           </motion.div>
 
-          <div className="grid grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
             <CompetenceCard
               icon={Code2}
               title="Desarrollo Web"

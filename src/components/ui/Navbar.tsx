@@ -67,7 +67,7 @@ export default function Navbar() {
             : "bg-transparent"
         }`}
       >
-        <div className="w-full max-w-6xl mx-auto px-6 md:px-10 h-16 flex items-center justify-between gap-4">
+        <div className="w-full max-w-6xl mx-auto px-6 sm:px-8 md:px-10 h-16 flex items-center justify-between gap-4">
           {/* Logo / Nombre */}
           <a
             href="#hero"
@@ -126,7 +126,7 @@ export default function Navbar() {
             transition={{ duration: 0.2 }}
             className="fixed top-16 left-0 right-0 z-40 bg-[rgba(5,5,5,0.97)] border-b border-[rgba(0,245,255,0.1)] backdrop-blur-md md:hidden"
           >
-            <ul className="flex flex-col py-4 px-6">
+            <ul className="flex flex-col py-4 px-6 sm:px-8">
               {NAV_ITEMS.map((item, i) => (
                 <li key={i}>
                   <button

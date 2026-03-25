@@ -23,7 +23,7 @@ export default function SectionWrapper({ id, children, className = "" }: Section
         whileInView={isMobile ? undefined : { opacity: 1 }}
         viewport={isMobile ? undefined : { once: true, amount: 0 }}
         transition={{ duration: isMobile ? 0 : 0.5 }}
-        className="w-full max-w-6xl mx-auto px-6 md:px-10"
+        className="w-full max-w-6xl mx-auto px-6 sm:px-8 md:px-10"
       >
         {children}
       </motion.div>

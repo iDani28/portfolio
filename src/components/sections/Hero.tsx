@@ -103,7 +103,7 @@ export default function Hero() {
       />
 
       {/* Contenido principal */}
-      <div className="relative z-10 text-center w-full max-w-5xl mx-auto px-6 md:px-10">
+      <div className="relative z-10 text-center w-full max-w-5xl mx-auto px-6 sm:px-8 md:px-10">
 
         {/* Badge de estado — disponible para empleo */}
         <motion.div
@@ -111,7 +111,7 @@ export default function Hero() {
           initial="hidden"
           animate="visible"
           variants={fadeIn}
-          className="inline-flex items-center gap-2 mb-8 px-4 py-2 rounded-full border border-[rgba(0,255,65,0.3)] bg-[rgba(0,255,65,0.05)]"
+          className="hidden sm:inline-flex items-center gap-2 mb-8 px-4 py-2 rounded-full border border-[rgba(0,255,65,0.3)] bg-[rgba(0,255,65,0.05)]"
         >
           <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00ff41] opacity-75" />
