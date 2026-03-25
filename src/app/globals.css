@@ -1,0 +1,137 @@
+@import "tailwindcss";
+
+/* Variables del tema oscuro cyberpunk */
+:root {
+  --bg-primary: #050505;
+  --bg-secondary: #0a0a0f;
+  --accent-cyan: #00f5ff;
+  --accent-green: #00ff41;
+  --accent-purple: #7b2fff;
+  --text-primary: #e8f4f8;
+  --text-secondary: #8892b0;
+  --border-glow: rgba(0, 245, 255, 0.3);
+}
+
+@theme inline {
+  --color-background: var(--bg-primary);
+  --color-foreground: var(--text-primary);
+  --color-cyan: var(--accent-cyan);
+  --color-green: var(--accent-green);
+  --color-purple: var(--accent-purple);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/*
+  Reset y estilos base dentro de @layer base.
+  IMPORTANTE: en Tailwind v4, los estilos fuera de un layer tienen mayor
+  prioridad que los utilitarios aunque tengan menor especificidad.
+  Al meterlos en @layer base, los utilitarios (@layer utilities) los sobreescriben
+  correctamente — eso restaura mx-auto, flex, etc.
+*/
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+
+  body {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-geist-sans), system-ui, sans-serif;
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  /* Scrollbar personalizada */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--accent-cyan);
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-green);
+  }
+
+  /* Selección de texto */
+  ::selection {
+    background: rgba(0, 245, 255, 0.25);
+    color: var(--accent-cyan);
+  }
+}
+
+/* Animaciones */
+@keyframes glitch {
+  0%, 100% { transform: translate(0); }
+  20% { transform: translate(-2px, 1px); }
+  40% { transform: translate(2px, -1px); }
+  60% { transform: translate(-1px, 2px); }
+  80% { transform: translate(1px, -2px); }
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+@keyframes scan {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 10px rgba(0, 245, 255, 0.3); }
+  50% { box-shadow: 0 0 30px rgba(0, 245, 255, 0.7), 0 0 60px rgba(0, 245, 255, 0.3); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Clases utilitarias de diseño */
+.cyber-grid {
+  background-image:
+    linear-gradient(rgba(0, 245, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 245, 255, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+.text-glow-cyan {
+  text-shadow: 0 0 10px var(--accent-cyan), 0 0 30px rgba(0, 245, 255, 0.5);
+}
+
+.text-glow-green {
+  text-shadow: 0 0 10px var(--accent-green), 0 0 30px rgba(0, 255, 65, 0.5);
+}
+
+.border-glow {
+  border: 1px solid rgba(0, 245, 255, 0.4);
+  box-shadow: 0 0 15px rgba(0, 245, 255, 0.15), inset 0 0 15px rgba(0, 245, 255, 0.05);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--accent-cyan), var(--accent-green));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.cursor-blink::after {
+  content: '|';
+  color: var(--accent-cyan);
+  animation: blink 1s infinite;
+  margin-left: 2px;
+}
